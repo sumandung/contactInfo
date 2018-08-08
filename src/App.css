@@ -26,3 +26,82 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+input[type=text], input[type=tel], input[type=email], select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit],input[type=button] {
+    width: 100%;
+    background-color: #f50b0b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=button] {
+  background-color: transparent;
+  color:#f50b0b;
+  border: 1px solid #f50b0b;
+}
+
+input[type=submit]:hover {
+    background-color: red;
+}
+
+div.root {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 60%;
+    margin: 50px auto;
+}
+
+.sub-info{
+  background: #fff;
+  padding: 15px;
+}
+
+.sub-info span {
+  display:inline-block;
+  margin-bottom: 10px;
+}
+
+.contact-info{
+  font-family: monospace;
+}
+
+form {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.red {
+  color:#f50b0b;
+  display: inline-block;
+  margin-bottom: 20px;
+  cursor:pointer;
+}
+
+span.error {
+  color:#c52626;
+  font-size:12px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.sub-info a{
+  float: right;
+  margin-right: 20px;
+  text-decoration: none;
+  color:rgb(78, 72, 72);
+}
