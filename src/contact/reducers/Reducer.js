@@ -15,20 +15,20 @@ export default function Reducer(state = INITIAL_STATE, action) {
 			});
 		}
 		case ActionTypes.ADD_EMAIL: {
-			const length = (Object.keys(state.details.otheremails).length)+1;
+			const length = (Object.keys(state.details.secondaryEmails).length)+1;
 			return Object.assign({}, state,  {
 				details: {
 					...state.details,
-					otheremails : {...state.details.otheremails,['em'+length]:action.payload}
+					secondaryEmails : {...state.details.secondaryEmails,['em'+length]:action.payload}
 				}
 			});
 		}
 		case ActionTypes.ADD_TEL: {
-			const length = (Object.keys(state.details.otherphnos).length)+1;
+			const length = (Object.keys(state.details.secondaryPhoneNumbers).length)+1;
 			return Object.assign({}, state,  {
 				details: {
 					...state.details,
-					otherphnos : {...state.details.otherphnos,['pn'+length]:action.payload}
+					secondaryPhoneNumbers : {...state.details.secondaryPhoneNumbers,['pn'+length]:action.payload}
 				}
 			});	
 		}
@@ -46,8 +46,8 @@ export default function Reducer(state = INITIAL_STATE, action) {
 			return Object.assign({}, state, {
 				details: {
 					...state.details,
-					otherphnos : {
-						...state.details.otherphnos,
+					secondaryPhoneNumbers : {
+						...state.details.secondaryPhoneNumbers,
 						[fieldname]:value
 					}
 				}
@@ -58,8 +58,8 @@ export default function Reducer(state = INITIAL_STATE, action) {
 			return Object.assign({}, state, {
 				details: {
 					...state.details,
-					otheremails : {
-						...state.details.otheremails,
+					secondaryEmails : {
+						...state.details.secondaryEmails,
 						[fieldname]:value
 					}
 					

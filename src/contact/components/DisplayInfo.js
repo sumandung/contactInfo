@@ -15,6 +15,13 @@ class DisplayInfo extends React.Component {
     this.props.history.push('/edit');
   }
 
+  createElementsFromArray(arr){
+    const elements = Object.keys(arr).map((key) => { return (
+        <React.Fragment key={key}><li>{arr[key]}</li></React.Fragment>
+     )});
+     return elements;
+  }
+
   render() {
     //fallback UI
     if (this.props.hasError || this.props.info === null) {
@@ -25,33 +32,29 @@ class DisplayInfo extends React.Component {
         </div>
       );
     }
-    if(this.props.info){
-      const {title,subtitle,firstname,lastname,primaryemail,primaryphno,otheremails,otherphnos} = this.props.info;
+    else {
+      const {firstname,lastname,primaryEmail,primaryPhoneNumber,secondaryEmails,secondaryPhoneNumbers} = this.props.info;
       return (
           <div className = "contact-info">
-          
-          <h1>{title}</h1>
-          <div className = "sub-info">
-            <h2>{subtitle}</h2> 
+          <header>
+            <h1>Personal Details</h1>
+          </header>
+
+          <section className = "sub-info">
+            <h2>Personal Information</h2> 
             <a href="javascript:void(0)" onClick={this.onEdit.bind(this)}>Edit</a>
-            <span> {firstname} </span> <span> {lastname} </span>
-            <br/>
-            <span> {primaryemail} </span>
-            <br/>
-            {Object.keys(otheremails).map((key) => (
-              <React.Fragment key={key}><span>{otheremails[key]}</span><br/></React.Fragment>
-            ))}
-            <span> {primaryphno} </span><br/> 
-            {Object.keys(otherphnos).map((key) => (
-              <React.Fragment key={key}><span>{otherphnos[key]}</span><br/></React.Fragment>
-            ))}
-             
-          </div>
+            <ul>
+              <li> {firstname}&npsp;{lastname}</li>
+              <li> {primaryEmail} </li>
+              {this.createElementsFromArray(secondaryEmails)}
+              <li> {primaryPhoneNumber} </li><br/> 
+              {this.createElementsFromArray(secondaryPhoneNumbers)}
+            </ul>
+          </section>
 
         </div>
       );
     }
-    return <br />;
   }
 }
 

@@ -1,15 +1,13 @@
 const mock_data =  {
-    "title": "Personal Details",
-    "subtitle": "Personal Information",
     "firstname": "John",
     "lastname": "Smith",
-    "primaryemail" : "aa@gmail.com",
-    "otheremails" : {
+    "primaryEmail" : "aa@gmail.com",
+    "secondaryEmails" : {
       em1 :'js@gmail.com',
       em2 :'js1@gmail.com'
     },
-    "primaryphno" : 643563489,
-    "otherphnos" : {
+    "primaryPhoneNumber" : 643563489,
+    "secondaryPhoneNumbers" : {
       pn1:22311123,
       pn2:3123123131
     },

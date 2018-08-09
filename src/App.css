@@ -105,3 +105,16 @@ span.error {
   text-decoration: none;
   color:rgb(78, 72, 72);
 }
+
+.sub-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sub-info ul li {
+  margin-bottom: 10px;
+}
+
+a.red {
+  text-decoration: none;
+}
